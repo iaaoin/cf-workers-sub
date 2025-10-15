@@ -79,8 +79,8 @@ export default {
 				if (env.LINKSUB) urls = await ADD(env.LINKSUB);
 			}
 			let 重新汇总所有链接 = await ADD(MainData + '\n' + urls.join('\n'));
-			let 自建节点 = "";
 			let 订阅链接 = "";
+			let 自建节点 = "";
 			for (let x of 重新汇总所有链接) {
 				if (x.toLowerCase().startsWith('http')) {
 					订阅链接 += x + '\n';
@@ -825,4 +825,5 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 			headers: { "Content-Type": "text/plain;charset=utf-8" }
 		});
 	}
+
 }
